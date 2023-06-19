@@ -1,0 +1,47 @@
+<body>
+    <div style="padding:46.25% 0 0 0;position:relative;">
+        <iframe id="targIframe" 
+            src="https://player.vimeo.com/video/833269350?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen 
+            style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+            title="Recording">
+        </iframe>
+    </div>
+
+    <script type="text/javascript">
+        // Get input parameters
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        const vimeoVideoID = getParameterByName('vimeoID');
+
+        // Load when page loads
+        const targIframe = document.getElementById("targIframe");
+        targIframe.setAttribute(
+                'src',
+                `https://player.vimeo.com/video/${vimeoVideoID}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`,
+            );
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var iframe = document.createElement('iframe')
+            iframe.setAttribute(
+                'src',
+                `https://s.tradingview.com/embed-widget/single-quote#{"symbol":"${symbol}","colorTheme":"dark"}`,
+            );
+            iframe.setAttribute('frameborder', 0)
+            iframe.setAttribute('style', 'box-sizing: border-box; height: 100%; width: 100%;')
+            container.appendChild(iframe)
+        });
+
+        <div style="padding:46.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/833269350?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="(BMB) Expert Call Copywriting met Laure Oomens van Loco - 2023-06-05"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+    </script>
+    </div>
+</body>
